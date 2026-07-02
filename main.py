@@ -12,7 +12,7 @@ def main():
             ervas = erva_repository.List_Ervas()
 
             for erva in ervas:
-                print(f'ID: {erva.id}, Nome: {erva.nome}')
+                print(f'ID: {erva.id},       Nome:       {erva.nome}')
             
     def atualizar_erva():
         def update():
