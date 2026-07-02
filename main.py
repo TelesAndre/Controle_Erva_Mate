@@ -12,16 +12,38 @@ def main():
             ervas = erva_repository.List_Ervas()
 
             for erva in ervas:
-                print(f'ID: {erva.id}, Nome: {erva.nome}')
+                print(f'ID: {erva.id},       Nome:       {erva.nome}')
             
     def atualizar_erva():
-        
-        erva = Erva()
+        def update():
+            erva = Erva()
 
-        with DataBase() as db:
-            erva_repository = Erva_Repository(db)
-            erva_repository.update(erva)
-    
+            with DataBase() as db:
+                erva_repository = Erva_Repository(db)
+                erva_repository.update(erva)
+        
+        while True:
+            acao = int(input('''
+                            Digite qual opção você deseja:
+
+                            1. Pesquisar pelo Nome da Erva
+                            2. Pesquisar pelo ID da Erva
+                            3. Listar as Ervas
+                            4. Voltar
+                            '''
+            ))
+
+            match acao:
+                case 1:
+                    pass
+                case 2:
+                    pass
+                case 3:
+                    pass
+                case 4:
+                    print('Você foi direcionado para o Menu Inicial.')
+                    return False
+        
     def cadastrar_erva():
         nome = input('Qual é o Nome da erva? ')
         composicao = input('Qual é a Composição da erva? ')
